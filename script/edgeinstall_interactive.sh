@@ -23,12 +23,16 @@ read -p "Enter Platform URL: " PLATFORMFQDN
 #PLATFORMFQDN="" #FQDN Hostname to Connect
 
 #----------FILESYSTEM SETTINGS FOR EDGE
-BINPATH=/usr/local/bin/clearblade
-EDGEDBPATH=/var/lib/clearblade
-EDGEUSERSDBPATH=/var/lib/clearblade
+BINPATH=/usr/local/bin
+VARPATH=/var/lib
+CBBINPATH=$BINPATH/clearblade
+EDGEDBPATH=$VARPATH/clearblade
+EDGEUSERSDBPATH=$VARPATH/clearblade
+EDGEUSERDBNAME=edgeusers.db
+EDGEDBNAME=edge.db
 #---------Edge Version---------
 EDGEBIN="/usr/local/bin/clearblade/edge"
-DATASTORE="-db=sqlite -sqlite-path=$EDGEDBPATH/edge.db -sqlite-path-users=$EDGEUSERSDBPATH/edgeusers.db" # or "-local"
+DATASTORE="-db=sqlite -sqlite-path=$EDGEDBPATH/$EDGEDBNAME -sqlite-path-users=$EDGEUSERSDBPATH/$EDGEUSERDBNAME" # or "-local"
 
 #---------Logging Info---------
 LOGLEVEL="info"
@@ -100,7 +104,7 @@ rm "$EDGEBIN"
 systemctl daemon-reload
 
 echo ---------------------4. Creating File Structure---------------------
-mkdir $BINPATH
+mkdir $CBBINPATH
 mkdir $EDGEDBPATH
 mkdir $EDGEUSERSDBPATH
 
@@ -138,6 +142,7 @@ After=$NETWORKSERVICENAME
 
 [Service]
 Type=simple
+WorkingDirectory=$CBBINPATH
 ExecStart=$EDGEBIN -log-level=$LOGLEVEL -novi-ip=$PLATFORMFQDN -parent-system=$PARENTSYSTEM -edge-ip=localhost -edge-id=$EDGEID -edge-cookie=$EDGECOOKIE $DATASTORE
 Restart=on-abort
 TimeoutSec=30
@@ -174,8 +179,3 @@ done
 systemctl status $SYSTEMDSERVICENAME
 
 echo "Run ----'systemctl status $SYSTEMDSERVICENAME'------for status"
-
-
-
-
-
