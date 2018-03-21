@@ -4,9 +4,12 @@ Runs through the typical processes for deploying a ClearBlade Edge, using system
 
 ### Requires the following items to be entered:
 *Edge Cookie:* Identifier to the system as the unique edge
+
 *Edge Name/ID:* Name of the edge to be deployed
+
 *Parent System:* Parent System Identifier
-*Platform URL:* Hostname for the Platform. Can be an IP address. Do not include http or https
+
+*Platform FQDN:* Hostname for the Platform. Can be an IP address. Do not include http or https (i.e. server.host.com)
 
 ### Execution Details
 Needs to be Run with root or sudo privileges
