@@ -1,12 +1,12 @@
 # ClearBladeEdgeDeploymentScript
-Interactive Deployment Script to Deploy the ClearBlade Edge Binaries on a Linux system
+Interactive Deployment Script to Deploy the ClearBlade Edge Binaries on a Linux system using systemd
 Runs through the typical processes for deploying a ClearBlade Edge, using systemd for running it as a service.
 
 ### Requires the following items to be entered:
 *Edge Cookie:* Identifier to the system as the unique edge
 *Edge Name/ID:* Name of the edge to be deployed
 *Parent System:* Parent System Identifier
-*Platform FQDN:* Hostname for the Platform. Can be an IP address
+*Platform URL:* Hostname for the Platform. Can be an IP address. Do not include http or https
 
 ### Execution Details
 Needs to be Run with root or sudo privileges
