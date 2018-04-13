@@ -23,7 +23,7 @@ read -p "Enter Platform FQDN: " PLATFORMFQDN
 #PLATFORMFQDN="" #FQDN Hostname to Connect
 
 #----------FILESYSTEM SETTINGS FOR EDGE
-BINPATH=/usr/local/bin
+BINPATH=/usr/bin
 VARPATH=/var/lib
 CBBINPATH=$BINPATH/clearblade
 EDGEDBPATH=$VARPATH/clearblade
@@ -163,4 +163,8 @@ done
 systemctl status $SYSTEMDSERVICENAME
 
 echo "Run ----'systemctl status $SYSTEMDSERVICENAME'------for status"
+
+
+
+
 
