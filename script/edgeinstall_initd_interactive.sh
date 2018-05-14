@@ -89,7 +89,6 @@ $CBBINPATH stop
 rm $CBBINPATH
 rm -rf /var/lib/clearblade
 rm "$EDGEBIN"
-systemctl daemon-reload
 
 echo ---------------------4. Creating File Structure---------------------
 mkdir $BINPATH #Just in case bin doesn't exist in /usr/local
