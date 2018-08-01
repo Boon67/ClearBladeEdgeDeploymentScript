@@ -21,9 +21,9 @@ Installs a service named "clearblade.service"
 Because the script installs the edge as systemd, it can be monitors by systemctl or journalctl commands.
 
 #### Binary Locations
-/usr/local/bin/clearblade/edge
+/usr/bin/clearblade/edge
 
 #### DB Location
-/var/lib/clearblade
+/usr/bin/clearblade
 
 #Note: Currently does not support auto install of OSX edges (coming soon)
