@@ -16,9 +16,9 @@ MACHINE_ARCHITECTURE="$(uname -m)"
 MACHINE_OS="$(uname)"
 echo "Machine Architecture: $MACHINE_ARCHITECTURE" 
 if [ "$MACHINE_ARCHITECTURE" == "armv6l" ] ; then
-  ARCHITECTURE="edge-linux-arm.tar.gz"
+  ARCHITECTURE="edge-linux-armv6.tar.gz"
 elif [ "$MACHINE_ARCHITECTURE" == "armv7l" ] ; then
-  ARCHITECTURE="edge-linux-arm.tar.gz"
+  ARCHITECTURE="edge-linux-armv7.tar.gz"
 elif [ "$MACHINE_ARCHITECTURE" == "armv8" ] ; then
   ARCHITECTURE="edge-linux-arm64.tar.gz"
 elif [ "$MACHINE_ARCHITECTURE" == "i686" ] ||  [ "$MACHINE_TYPE" == "i386" ] ; then
