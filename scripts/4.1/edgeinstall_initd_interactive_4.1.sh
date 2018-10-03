@@ -1,5 +1,5 @@
 #!/bin/bash
-RELEASE="4.1.7" #Edge Version to Install this does get updated often
+RELEASE="4.1.13" #Edge Version to Install this does get updated often
 echo "---------ClearBlade Interactive Edge Installer v0.9.2---------"
 echo "Edge Release: $RELEASE" 
 
