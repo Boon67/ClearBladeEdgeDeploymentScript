@@ -47,7 +47,7 @@ read -p "Enter Platform FQDN: " PLATFORMFQDN
 
 #----------FILESYSTEM SETTINGS FOR EDGE
 BINPATH=/usr/bin
-VARPATH=/var/lib
+VARPATH=/usr/bin #Only change if you want on a different path than the edge binary
 CBBINPATH=$BINPATH/clearblade
 EDGEDBPATH=$VARPATH/clearblade
 EDGEUSERSDBPATH=$VARPATH/clearblade
