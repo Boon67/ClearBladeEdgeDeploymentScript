@@ -40,18 +40,19 @@ read -p "Enter System Key: " PARENTSYSTEM
 read -p "Enter Platform FQDN: " PLATFORMFQDN
 
 #----------CONFIGURATION SETTINGS FOR EDGE if non-ineractive
+#----------CONFIGURATION SETTINGS FOR EDGE if non-ineractive
 RELEASE="4.5.1" #Edge Version
-#EDGECOOKIE="<EDGETOKENREQUIRED>" #Cookie from Edge Config Screen
-#EDGEID="<EDGEIDREQUIRED>" #Edge Name when Created in the system
-#PARENTSYSTEM="<SYSTEMKEYREQUIRED>" #System Key of the application to connect
-#PLATFORMFQDN="platform.clearblade.com" #FQDN Hostname to Connect
+#EDGECOOKIE="<EDGETOKEN>" #Cookie from Edge Config Screen
+#EDGEID="<EDGEID>" #Edge Name when Created in the system
+#PARENTSYSTEM="<SYSTEMKEY>" #System Key of the application to connect
+#PLATFORMFQDN="<PLATFORMFQDN>" #FQDN Hostname to Connect
 
 #----------FILESYSTEM SETTINGS FOR EDGE
 BINPATH=/usr/local/bin
 EDGEDBPATH=/usr/local/bin #Only change if you want on a different path than the edge binary
 USERDBPATH=/usr/local/bin #Only change if you want on a different path than the edge binary
-CBBINPATH=$EDGEDBPATH/clearblade
-EDGEDBPATH=$VARPATH/clearblade
+CBBINPATH=$BINPATH/clearblade
+EDGEDBPATH=$EDGEDBPATH/clearblade
 EDGEUSERSDBPATH=$USERDBPATH/clearblade
 EDGEUSERDBNAME=edgeusers.db
 EDGEDBNAME=edge.db
@@ -130,7 +131,6 @@ echo ---------------------7. Creating clearblade service---------------------
 cat >$SYSTEMDSERVICENAME <<EOF
 [Unit]
 Description=$SERVICENAME Version: $RELEASE
-
 [Service]
 Type=simple
 WorkingDirectory=$CBBINPATH
@@ -140,10 +140,8 @@ TimeoutSec=30
 RestartSec=30
 StartLimitInterval=350
 StartLimitBurst=10
-
 [Install]
 WantedBy=multi-user.target
-
 EOF
 
 echo ---------------------8. Placing service in systemd folder---------------------
